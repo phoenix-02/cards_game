@@ -78,7 +78,7 @@ const toggleFlipCard = (cardToFlip) => {
     transform: scale(1.3);
   }
   100% {
-    bottom: 110%;
+    bottom: 107%;
   }
 }
 
@@ -104,6 +104,9 @@ const toggleFlipCard = (cardToFlip) => {
   }
 
   .pile {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
     margin: 0 3px;
     height: 100%;
 
