@@ -17,7 +17,6 @@
             @click.stop="toggleFlipCard(card)"
           />
         </div>
-        <div class="cube">123</div>
       </div>
     </div>
   </div>
