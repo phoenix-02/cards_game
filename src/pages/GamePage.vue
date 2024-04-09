@@ -72,10 +72,13 @@ const toggleFlipCard = (cardToFlip) => {
 <style scoped>
 @keyframes moveUp {
   0% {
-    bottom: -10%; /* Start position at the bottom */
+    bottom: -10%;
+  }
+  80%{
+    transform: scale(1.3);
   }
   100% {
-    bottom: 100%; /* End position at the top */
+    bottom: 110%;
   }
 }
 

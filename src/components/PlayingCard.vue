@@ -4,7 +4,7 @@
       <span>{{ props.data.rank }}</span><br>
       <span :style="{color: props.data.suit.color}">{{ props.data.suit.code }}</span>
     </div>
-    <div class="back"/>
+    <div class="back" />
   </div>
 </template>
 
@@ -12,7 +12,10 @@
 import { defineProps } from 'vue';
 
 const props = defineProps({
-  data: Object,
+  data: {
+    type: Object,
+    required: true,
+  },
 });
 
 </script>

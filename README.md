@@ -1,14 +1,6 @@
 # cards_game
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+#### This project is a card game implemented using Vue.js. The game includes shuffling the deck of cards, dividing it into piles, and the ability to flip cards.
 
 ## Project Setup
 
@@ -27,3 +19,13 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### File Structure
+* src/: Contains the project's source files.
+  * components/: Directory with Vue.js components.
+  * helpers/: Directory with helper functions and modules.
+  * store/: Directory with data store.
+  * App.vue: Main application component.
+  * main.js: Main JavaScript file initializing the Vue.js application.
+  * public/: Contains static files such as images used in the project.
+  * README.md: This file containing information about the project.
