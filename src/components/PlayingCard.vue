@@ -20,7 +20,7 @@ const props = defineProps({
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .card {
   cursor: pointer;
   height: 270px;
@@ -28,7 +28,8 @@ const props = defineProps({
   perspective-origin: center 25em;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform .6s;
+  transition: transform 1s ease-in-out;
+  transition-delay: 0.7s;
   width: 200px;
 
   @media screen and (max-width: 800px) {

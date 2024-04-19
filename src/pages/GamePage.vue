@@ -52,7 +52,7 @@ const isCardAbleToFlip = (card) => {
   const pilesLastElements = [];
   piles.forEach(pile => {
     const notFlippedCardsInPile = pile.filter(c => !c.flipped);
-    // remove comment if needed multiple piles
+    //  uncomment if needed multiple piles
     // if(notFlippedCardsInPile.length === 0) return;
     pilesLastElements.push(notFlippedCardsInPile[notFlippedCardsInPile.length - 1]?.name || '');
 
@@ -70,21 +70,31 @@ const toggleFlipCard = (cardToFlip) => {
 };
 </script>
 
-<style scoped>
-@keyframes moveUp {
+<style scoped lang="scss">
+
+@keyframes moveUpDesktop {
   0% {
     bottom: -10%;
+    transform: scale(1);
   }
   80%{
-    @media screen and (min-width: 800px) {
-      transform: scale(1.3);
-    }
-    @media screen and (max-width: 800px) {
-      transform: scale(3);
-    }
+    transform: scale(1.4);
   }
   100% {
-    bottom: calc(100% - 103px);
+    transform: scale(1);
+  }
+}
+
+@keyframes moveUpMobile {
+  0% {
+    bottom: -10%;
+    transform: scale(1);
+  }
+  80%{
+    transform: scale(2.3);
+  }
+  100% {
+    transform: scale(2);
   }
 }
 
@@ -120,10 +130,16 @@ const toggleFlipCard = (cardToFlip) => {
       bottom: 0;
       position: absolute;
       &.flipped{
-        animation: moveUp 3s ease-in-out ;
+        @media screen and (min-width: 800px) {
+          animation: moveUpDesktop 2s ease-in-out ;
+
+          transform: scale(1);
+        }
         @media screen and (max-width: 800px) {
+          animation: moveUpMobile 2s ease-in-out ;
           transform: scale(2);
         }
+
       }
     }
   }
