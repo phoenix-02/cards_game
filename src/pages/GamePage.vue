@@ -38,7 +38,8 @@ const cardStyles = ( index, flipped, pile)=>{
   // z-index increment on init and decrement on moving card to another
   if(flipped) return {
     'z-index': 100 + pile.length - index,
-    'bottom': `calc(100% - ${ -index * cardPadding }px)`,
+    // calc to make correct position of pile and correct rotation
+    'bottom': `calc(100% - ${ 100 + (-index * cardPadding) }px)`,
   };
 
   return {
@@ -75,10 +76,15 @@ const toggleFlipCard = (cardToFlip) => {
     bottom: -10%;
   }
   80%{
-    transform: scale(1.3);
+    @media screen and (min-width: 800px) {
+      transform: scale(1.3);
+    }
+    @media screen and (max-width: 800px) {
+      transform: scale(3);
+    }
   }
   100% {
-    bottom: 107%;
+    bottom: calc(100% - 103px);
   }
 }
 
@@ -115,7 +121,9 @@ const toggleFlipCard = (cardToFlip) => {
       position: absolute;
       &.flipped{
         animation: moveUp 3s ease-in-out ;
-
+        @media screen and (max-width: 800px) {
+          transform: scale(2);
+        }
       }
     }
   }
